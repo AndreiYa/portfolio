@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pets.css">
+  <link rel="stylesheet" href="pets_adaptive.css">
+  <script src="pets.js"></script>
+  <title>Pets</title>
+</head>
+
+<body class="body">
+  <div class="shadow">
+    <!---Затемнение -->
+  </div>
+  <header class="header">
+    <div class="container__inner">
+      <div class="header__box">
+        <a href="../main/index.html" class="header__logo">
+          <div class="logo">
+            <h1>Cozy House</h1>
+            <div class="logo__name">Cozy House</div>
+            <div class="logo__descr">Shelter for pets in Boston</div>
+          </div>
+        </a>
+        <nav class="header-nav">
+          <ul class="list">
+            <li class="list__item"><a
+                href="../main/index.html"
+                class="list__link work">About the shelter</a></li>
+            <li class="list__item"><a class="list__link list__link_active work">Our pets</a></li>
+            <li class="list__item"><a class="list__link list__link_disabled closed">Help the shelter</a></li>
+            <li class="list__item"><a class="list__link list__link_disabled closed">Contacts</a></li>
+          </ul>
+        </nav>
+        <div class="burger__menu">
+          <span class="first__line"></span>
+          <span class="second__line"></span>
+          <span class="third__line"></span>
+        </div>
+      </div>
+      <nav class="mobile__menu">
+        <ul class="list">
+          <li class="list__item"><a href="#" class="list__link work">About the shelter</a></li>
+          <li class="list__item"><a
+              href="../pets/pets.html"
+              class="list__link list__link_active work">Our pets</a></li>
+          <li class="list__item"><a href="#" class="list__link list__link_disabled closed">Help the shelter</a></li>
+          <li class="list__item"><a href="#" class="list__link list__link_disabled closed">Contacts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="main">
+    <section class="pets">
+      <div class="container__inner">
+        <div class="pets__content">
+          <h3 class="pets__title">Our friends who <br>
+            are looking for a house</h3>
+          <div class="pets__cards">
+            <!-- Maybe Article tag -->
+
+            <div class="pets__card__slider">
+              <!-- Слайдер-->
+
+              <div class="pets__card__slidertrack" id="main-card">
+                <!-- Полоса прокрутки-->
+                <div class="pets__card__item">
+                  <img src="" alt="Katrine cat" class="pets__card__item__img">
+                  <h4 class="pets__card__item__name">Katrine</h4>
+                  <button class="pets__card__item__btn transp-btn">Learn more</button>
+                </div>
+
+                <!-- <div class="pets__card__item" id="main-card">
+                  <img src="../../assets/images/pets-jennifer.png" alt="Jennifer dog" class="pets__card__item__img">
+                  <h4 class="pets__card__item__name">Jennifer</h4>
+                  <button class="pets__card__item__btn transp-btn">Learn more</button>
+                </div>
+
+                <div class="pets__card__item">
+                  <img src="../../assets/images/pets-woody.png" alt="Woody dog" class="pets__card__item__img">
+                  <h4 class="pets__card__item__name">Woody</h4>
+                  <button class="pets__card__item__btn transp-btn">Learn more</button>
+                </div>
+                <div class="pets__card__item">
+                  <img src="../../assets/images/pets-sophia.png" alt="Sophia dog" class="pets__card__item__img">
+                  <h4 class="pets__card__item__name">Sophia</h4>
+                  <button class="pets__card__item__btn transp-btn">Learn more</button>
+                </div>
+
+                <div class="pets__card__item">
+                  <img src="../../assets/images/pets-timmy.png" alt="Timmy cta" class="pets__card__item__img">
+                  <h4 class="pets__card__item__name">Timmy</h4>
+                  <button class="pets__card__item__btn transp-btn">Learn more</button>
+                </div>
+
+                <div class="pets__card__item">
+                  <img src="../../assets/images/pets-charly.png" alt="Charly dog" class="pets__card__item__img">
+                  <h4 class="pets__card__item__name">Charly</h4>
+                  <button class="pets__card__item__btn transp-btn">Learn more</button>
+                </div>
+
+                <div class="pets__card__item">
+                  <img src="../../assets/images/pets-scarlet.png" alt="Scarlet dog" class="pets__card__item__img">
+                  <h4 class="pets__card__item__name">Scarlett</h4>
+                  <button class="pets__card__item__btn transp-btn">Learn more</button>
+                </div>
+
+                <div class="pets__card__item">
+                  <img src="../../assets/images/pets-freddie.png" alt="Freddie cat" class="pets__card__item__img">
+                  <h4 class="pets__card__item__name">Freddie</h4>
+                  <button class="pets__card__item__btn transp-btn">Learn more</button>
+                </div> -->
+              </div>
+            </div>
+            <div class="navigation">
+              <button class="navigation__button left__nav__begin navigation__button__disabled">&#60;&#60;</button>
+              <button class="navigation__button left__nav__arrow navigation__button__disabled">&#60;</button>
+              <button class="navigation__button nav__page__number">1</button>
+              <button class="navigation__button right__nav__arrow navigation__button__active">&#62;</button>
+              <button class="navigation__button right__nav__end navigation__button__active">&#62;&#62;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<section class="modal" id="modal-result">
+  <div class="modal__block" id="#content">
+    <span class="modal__close"></span>
+    <div class="modal__image">
+      <img src="" alt="pet-image" class="modal__png" id="srcType">
+    </div>
+    <div class="modal__info">
+      <h2 class="modal__tittle" id="textName">Jennifer</h2>
+      <h3 class="modal__subtitle"><span id="textType">Dog - </span><span id="textBreed">Labrador</span></h3>
+      <p class="modal__description" id="textDescription">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+      <div class="modal__params params">
+        <ul class="params__pets">
+          <li class="params__strong" id="textAge"><strong>Age: </strong>2 months</li>
+          <li class="params__strong" id="textInoculations"><strong>Inoculations: </strong>none</li>
+          <li class="params__strong" id="textDiseases"><strong>Diseases: </strong>none</li>
+          <li class="params__strong" id="textParasites"><strong>Parasites: </strong>none</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+  <footer class="footer">
+    <div class="container__inner">
+      <div class="footer__content">
+        <div class="footer__questions">
+          <h3 class="footer__questions__title">For questions and suggestions</h3>
+          <a href="mailto:email@shelter.com" class="footer__link footer__link__email">email@shelter.com</a>
+          <a href="tel:+136745677554" class="footer__link footer__link__tel">+13 674 567 75 54</a>
+        </div>
+        <adress class="footer__adress">
+          <h3 class="footer__adress__title">We are waiting for your visit</h3>
+          <a href="https://goo.gl/maps/pmKvYzsnmsZyxsjG7" target="_blank" class="footer__link footer__link__map">1
+            Central Street, Boston (entrance from the store)</a>
+          <a href="https://goo.gl/maps/uRpVGGQPYku914qw5" target="_blank" class="footer__link footer__link__map">18
+            South Park, London </a>
+        </adress>
+        <img src="../../assets/images/footer-puppy.png" alt="footer puppy" class="footer__puppy">
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
