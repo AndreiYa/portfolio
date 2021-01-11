@@ -1,0 +1,528 @@
+/* reset */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+/* general */
+
+.container{
+  width: 1600px; /*only for static, after max-width*/ 
+  margin: 0 auto;
+}
+
+.btn {
+  width: 184px;
+  height: 46px;
+  background-color: #00AFDB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.btn a{
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #373737;
+}
+
+.descr {
+  font-size: 14px;
+  color: #4e4e4e;
+}
+
+.smallblock-wrapper {
+  width: 1062px; /*only for static, after max-width*/
+  display: flex;
+}
+
+.btn:hover {
+  background-color: #009CC2;
+  cursor: pointer;
+}
+
+strong{
+  font-weight: 700;
+}
+
+/* header*/
+
+.main-title{
+  position: absolute;
+  left: -999px;
+}
+
+.your-life-wrapper{
+  background: url('../img/bg/bg-image.png') center center/cover no-repeat;
+  height: 744px; /*only for static, after remove*/
+}
+
+.header-menu{
+  display: flex;
+  justify-content: flex-start;
+  height: 95px;
+  margin: 0 auto;
+  width: 582px;
+}
+
+.menu-item{
+  list-style-type: none;
+  margin: 36px 0px 0px 0px;
+}
+.menu-item:nth-child(1) {
+  margin: 36px 85px 0 -6px;
+}
+.menu-item:nth-child(2){
+ margin: 36px 101px 0 0;
+}
+.menu-item:nth-child(4) {
+  margin: 36px 84px 0 0;
+}
+.main-logo{
+  margin: 25px 100px 0 0;
+}
+
+.menu-item a{
+  text-decoration: none;
+  font-size: 14px;
+  color:#ffffff;
+  opacity: 0.8;
+}
+.menu-item.active a{
+  opacity: 1;
+  font-weight: 500;
+}
+
+.menu-item a:hover {
+  opacity: 1;
+}
+
+.main-logo a {
+  opacity: 1;
+}
+.menu-item.active:after{
+   content:'';
+   display: block;
+   width: 100%;
+   height: 1px;
+   margin-top: -2px;
+   background-color: #ffffff;
+}
+
+.menu-item:hover:after{
+  content:'';
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: -2px;
+  background-color: #ffffff;
+}
+
+/* your life*/
+
+.big-title{
+  text-align: center;
+  font-weight: 700;
+  font-size: 64px; 
+  line-height: 75px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 4.5px;
+  margin: -96px 0 22px 5px;
+  padding-top: 230px;;
+}
+
+.header-descr{
+  max-width: 504px;
+  font-size: 18px;
+  text-align: center;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.header-btn{
+  margin: 30px auto 182px auto; 
+}
+
+.social{
+  max-width: 170px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.social-item{
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.social-item img{
+  width: 100%;
+  height: 100%;
+}
+
+/* ideas section*/
+
+.smallblock-ideas{
+  justify-content: space-between;
+}
+.ideas.text-block {
+  margin-top: 295px;
+}
+
+.ideas-title{
+  max-width: 368px;
+}
+
+.ideas-descr {
+  max-width: 407px;
+  margin: 22px 0 30px 0;
+  line-height: 145%;
+}
+
+.ideas-img {
+  margin: 120px 0 140px 0;
+  max-width: 407px;
+  max-height: 582px;
+  overflow: hidden;
+  object-fit: cover;
+  
+}
+.ideas-img img{
+  width: 100%;
+  height: 100%;  
+}
+
+/* our_community*/
+
+.our-community{
+  background-color: #f5f6f7;
+}
+
+.our-community-img{
+  position: relative;
+}
+
+.our-community.text-block{
+  max-width: 297px;
+  text-align: center;
+  margin: 155px 139px 173px 0;
+}
+
+.our-community-logo{
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
+}
+
+.our-community-title{
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 2.4px;
+  margin: 21px 0 11px 0;
+}
+
+.our-comunnity-descr{
+  font-size: 14px;
+  line-height: 149%;
+}
+
+.slider{
+  display: flex;
+  justify-content: space-between;
+  max-width: 894px;
+  overflow: hidden;
+  margin-top: 120px;
+}
+
+.rightblock-wrapper{
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.slider-item{
+  margin-right: 30px;
+}
+
+.counter{
+  font-size: 18px;
+  color: #373737;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 79px;
+  left: 545px;
+}
+
+.counter-prev{
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.counter-prev:hover:before{
+  opacity: 0.5;
+}
+
+.counter-next:hover:after {
+  opacity: 0.5;
+}
+
+
+.counter-slash{
+  margin-right: 5px;
+}
+
+.counter-next{
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.counter-prev:before{
+  content:'';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  border-left: 2px solid #373737;
+  border-top: 2px solid #373737;
+  transform: rotate(-45deg);
+  cursor: pointer;
+}
+
+.counter-next:after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 10px;
+  border-right: 2px solid #373737;
+  border-bottom: 2px solid #373737;
+  transform: rotate(-45deg);
+  cursor: pointer;
+}
+
+.counter-slash {
+  font-weight: 500;
+}
+
+/* right-code */
+
+.right-code-img{
+  margin: 120px 0 140px 0;
+  max-width: 407px;
+  max-height: 582px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.right-code-img img{
+  width: 100%;
+  height: 100%;
+}
+
+.strong{
+  font-weight: 500;
+  color: #373737;
+}
+
+.right-code.text-block{
+  max-width: 407px;
+  margin: 319px 0 0 139px;
+}
+
+.right-code-descr{
+  margin: 21px 0 29px 0;
+  line-height: 145%;
+}
+
+.right-code-title{
+  letter-spacing: 1px;
+}
+
+.right-code-btn{
+  width: 180px;
+}
+
+/* newsletter*/
+
+.newsletter-wrapper{
+  background: url('../img/bg/pexels-christina-morillo.png') center center/cover no-repeat;
+  background-position: 0px 0px;
+}
+
+.newsletter-title{
+  text-align: center;
+  color: #ffffff;
+  padding-top: 200px;
+}
+
+.email-form{
+  width: 406px;
+  height: 46px;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-bottom: 265px;
+}
+
+.email-input{
+  width: 340px;
+  height: 46px;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  padding-left: 24px;
+  color: #373737;
+}
+
+.email-submit{
+  width: 66px;
+  height: 46px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #00AFDB url('../img/icons/fa-check.svg') center center no-repeat;
+}
+.email-submit:hover{
+  background-color: #009CC2;
+}
+
+/* download */
+
+.download-title{
+  text-align: center;
+  margin: 120px 0 22px 0;
+}
+
+.download-descr{
+  max-width: 483px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 14px;
+}
+
+.bt-items{
+  max-width: 406px;
+  display: flex;
+  justify-content: space-between;
+  margin: 29px auto 180px auto;
+}
+
+.store-btn{
+  display: flex;
+  width: 186px;
+  height: 46px;
+}
+
+.applebtn-submit{
+  width: 59px;
+  height: 46px;
+  background: #009CC2 url('../img/icons/icon-apple.svg') center center no-repeat;
+  cursor: pointer;
+}
+
+.androidbtn-submit{
+  width: 59px;
+  height: 46px;
+  background: #009cc2 url('../img/icons/icon-android.svg') center center no-repeat;
+  cursor: pointer;
+}
+
+.applebtn-text,
+.androidbtn-text{
+  width: 128px;
+  height: 46px;
+  background-color: #00AFDB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.store-btn:hover .applebtn-text {
+  background-color: #009CC2;
+  cursor: pointer;
+}
+
+.store-btn:hover .androidbtn-text {
+  background-color: #009CC2;
+  cursor: pointer;
+}
+/* footer*/
+
+.footer-container{
+    background-color: #000000;
+}
+
+.footer-wrapper{
+  width: 1280px; /*only for static, after max-width*/
+}
+
+.footer-items{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 0 74px 0;
+}
+
+.footer-logo{
+  margin-right: 69px;
+}
+
+.footer-menu{
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-menu-link{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.footer-menu-link span{
+  display: inline-block;
+  margin: 0 20px;
+  width: 1px;
+  height: 12px;
+  background-color: #4e4e4e;
+}
+
+.footer-menu-link a{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.footer-right-text a{
+  color: #818181;
+  text-decoration: none;
+  font-size: 14px;
+}
