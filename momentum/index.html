@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="owfont-regular.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <title>momentum</title>
+</head>
+<body>
+  <div class="overlay"></div>
+  <button class="btn-img"></button>
+  <div class="time">
+    <span id="hours"></span>
+    <span id="minutes"></span>
+    <span id="seconds"></span>
+  </div>
+  <div class="fullTime"></div>
+  <h1>
+    <span class="greeting"></span>
+    <span class="name" contenteditable="true"></span>
+  </h1>
+  <h2>What Is Your Focus For Today?</h2>
+  <span class="focus" contenteditable="true"></span>
+  <div class="weather">
+    <div class="city" contenteditable="true"></div>
+    <i class="weather-icon owf"></i>
+    <div class="temperature m"></div>
+    <div class="feel-like m"></div>
+    <div class="humidity-rel m"></div>
+    <div class="weather-description m"></div>
+    <div class="wind-speed m"></div>
+  </div>
+  <button class="btn-q"></button>
+<figure class="quote">
+  <blockquote class="blockq"></blockquote>
+  <figcaption class="figc"></figcaption>
+</figure>
+<div class="note-block">
+  <div class="exit">
+    <span class="close"></span>
+  </div>
+  <div class="list">
+    <!-- <li class="note" contenteditable="true"></li>
+    <li class="note" contenteditable="true"></li>
+    <li class="note" contenteditable="true"></li>
+    <li class="note" contenteditable="true"></li> -->
+    <textarea class="note" name="TODO" id="" cols="25" rows="12" placeholder="Use Enter to save..."></textarea>
+  </div>
+ 
+</div>
+<div class="city-error">
+  <div class="text">
+    Please enter valid city name <span class="error-right">--></span> 
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
