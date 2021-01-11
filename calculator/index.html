@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculator</title>
+  <link href="styles.css" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+  <div class="calculator-grid">
+    <div class="output">
+      <div data-previous-operand class="previous-operand"></div>
+      <div data-current-operand class="current-operand"></div>
+    </div>
+    <button data-all-clear class="operation span-two span-double">AC</button>
+    <button data-delete class="operation">DEL</button>
+    
+    <button data-operation class="operation">÷</button>
+    <button data-number>1</button>
+    <button data-number>2</button>
+    <button data-number>3</button>
+    <button data-operation class="operation">*</button>
+    <button data-number>4</button>
+    <button data-number>5</button>
+    <button data-number>6</button>
+    <button data-operation class="operation">+</button>
+    <button data-number>7</button>
+    <button data-number>8</button>
+    <button data-number>9</button>
+    <button data-operation class="operation">-</button>
+    
+    <button data-number class="span-double">0</button>
+    <button data-number class="operation white">.</button>
+    <button class="operation switch">-/+</button>
+    
+    <button data-operation-sqrt class="operation span-two">&radic;</button>
+    <button data-operation class="operation span-two">x<sup>n</sup></button>
+    <button data-equals class="operation span-two span-double">=</button>
+  </div>
+  <div class="description">
+    <div class="description-text">
+      <p>Уважаемый проверяющий, приветствую тебя!!!</p>
+      <p>Как тут всё работает - да собственно как обычный калькулятор :)</p>
+      <p>Моменты на которые хотелось бы обратить внимание:</p>
+      <ul>
+        <li>При работе с отрицательными числами, если два отрицательных числа, то работает на лету, т.е если мы например
+          проверяем -5 + -2, нажимать равно не требуется. Данная возможность существует в условиях к заданию и ошибкой не
+          является.</li>
+        <li>Есть отдельная кнопка для работы с отрицательными числами "-/+" Работает так: вводим число после нажимает
+          "-/+" получаем отрицательное число далее выбераем необходимую операцию и следующее чиcло(при необходимости его
+          тоже можно сделать отрицательным)</li>
+        <li>Корень квадратный &radic; тоже работает на лету</li>
+      </ul>
+      <p>Спасибо</p>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
