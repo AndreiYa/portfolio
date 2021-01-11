@@ -94,6 +94,7 @@ body {
 }
 
 .description{
+  display: none;
   max-width: 30%;
   border-radius: 15px;
   background-color: rgba(255,255,255, .9)
