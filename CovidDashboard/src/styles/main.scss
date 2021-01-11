@@ -1,0 +1,547 @@
+@import "utils/_normalize";
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-areas: "header header header" "cases map global" "date schedule schedule" "footer schedule schedule";
+    grid-template-rows: 2fr 7fr 2fr 2fr;
+    grid-template-columns: 20% 1fr 30%;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    height: calc(100% - 20px);
+    margin: 0;
+    background: rgb(17, 17, 17);
+    color: rgb(214, 214, 214);
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(17, 17, 17);
+    left: 0;
+    top: 0;
+    background-image: url("../images/loading.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 5000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-resizer {
+    width: 1.4rem;
+    height: 1.4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    background-color: #333;
+    border: 1px solid rgb(85, 85, 85);
+    span {
+        font-size: 1.1rem;
+    }
+}
+
+.box-full {
+    position: fixed !important;
+    width: calc(100% - 20px) !important;
+    height: calc(100% - 20px) !important;
+    left: 10px !important;
+    top: 10px !important;
+    z-index: 2000;
+    .cases-by__list {
+        max-height: none;
+    }
+}
+
+.logo__wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.search__wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search__input {
+    width: 150px;
+    height: 25px;
+    background-color: #202020;
+    margin-right: 10px;
+    color: lightgray;
+    padding: 5px;
+    font-size: 18px;
+    outline: none;
+    border: none
+}
+
+.search__btn {
+    font-size: 19px;
+    border: 1px solid lightgray;
+    padding: 5px;
+    cursor: pointer;
+    &:hover {
+        border: 1px solid white;
+        color: white;
+    }
+}
+
+.map__legend {
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    bottom: 0;
+    right: 0;
+    background-color: #555555;
+    z-index: 999;
+}
+
+.map__legend.none {
+    height: 35px;
+}
+
+.legend__nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.legend__title,
+.legend__close,
+.legend__confirmed,
+.legend__recovered {
+    margin: 3px 5px;
+    color: lightgray;
+    cursor: pointer;
+}
+
+.legend__confirmed:hover,
+.legend__recovered:hover {
+    color: white;
+}
+
+.legend__confirmed.none,
+.legend__recovered.none {
+    display: none;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+.covid-logo {
+    font-size: 2.5rem;
+    margin: 0 1rem;
+    color: red;
+}
+
+#pageHeader {
+    grid-area: header;
+    background-color: #333;
+    border: 1px solid rgb(85, 85, 85);
+    padding: 10px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    .autocomplete {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: calc(100% - 4rem);
+        margin-left: 2rem;
+        margin-top: 1rem;
+    }
+    
+    .autocomplete * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    input[type=text] {
+        background-color: #f1f1f1;
+        width: 100%;
+        color: black;
+    }
+    
+    .autocomplete-items {
+        position: absolute;
+        border-bottom: none;
+        border-top: none;
+        z-index: 800;
+        top: 100%;
+        width: 160px;
+        left: 0;
+        right: 0;
+        max-height: 300px;
+        overflow-y: scroll;
+        font-size: 1rem;
+    }
+    
+    .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        border-bottom: 1px solid #f1f1f1;
+        color: black;
+    }
+    
+    .autocomplete-items div:hover {
+        /*when hovering an item:*/
+        background-color: #e9e9e9;
+    }
+    
+    .autocomplete-active {
+        /*when navigating through the items using the arrow keys:*/
+        background-color: DodgerBlue !important;
+        color: #ffffff;
+    }
+}
+
+#pageFooter {
+    grid-area: footer;
+    background-color: #333;
+    border: 1px solid rgb(85, 85, 85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#map {
+    grid-area: map;
+    background-color: #333;
+    border: 1px solid rgb(85, 85, 85);
+}
+
+#cases {
+    position: relative;
+    grid-area: cases;
+    background: rgb(17, 17, 17);
+    overflow: hidden;
+}
+
+.cases-by__list {
+    max-height: 230px;
+    overflow-y: scroll;
+    .country__item-wrapper {
+        border: none;
+        border-bottom: 1px solid black;
+        padding: 5px 0;
+        display: flex;
+        margin: 5px 0;
+        cursor: pointer;
+        .country__item-stat {
+            margin-left: 10px;
+            color: red;
+        }
+        .country__item-flag {
+            height: 15px;
+            width: 15px;
+            margin-right: 7px;
+        }
+    }
+}
+
+#global {
+    position: relative;
+    grid-area: global;
+    overflow: hidden;
+    background-color: #333;
+    border: 1px solid rgb(85, 85, 85);
+}
+
+#date {
+    grid-area: date;
+    background-color: #333;
+    border: 1px solid rgb(85, 85, 85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#schedule {
+    position: relative;
+    grid-area: schedule;
+    background-color: #333;
+    border: 1px solid rgb(85, 85, 85);
+
+}
+
+#wt-sky-root {
+    display: none;
+}
+
+#schedule {
+    display: flex;
+}
+.schedule-death,
+.schedule-confirmed,
+.schedule-recovered {
+    width: 33%;
+}
+
+@media all and (max-width: 768px) {
+    body {
+        grid-template-areas: "header header header" "map map map" "cases global global" "date date date" "schedule schedule schedule" "footer footer footer";
+        grid-template-rows: 80px 1fr 1fr 80px 1fr 70px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    header,
+    footer,
+    nav,
+    div {
+        //padding: 0.2em;
+        //background: gold;
+    }
+    .global-info-select {
+        div {
+            padding: 0;
+        }
+        .select-title {
+            font-size: 0.7rem;
+        }
+    }
+    #pageHeader {
+        grid-area: header;
+    }
+    #pageFooter {
+        grid-area: footer;
+    }
+    #map {
+        grid-area: map;
+        min-height: 300px;
+    }
+    #cases {
+        grid-area: cases;
+        min-height: 400px;
+    }
+    #global {
+        grid-area: global;
+    }
+    #date {
+        grid-area: date;
+    }
+    #schedule {
+        grid-area: schedule;
+        min-height: 830px;
+    }
+    #wt-sky-root {
+        display: none;
+    }
+    #schedule {
+        flex-direction: column;
+    }
+    .schedule-death,
+    .schedule-confirmed,
+    .schedule-recovered {
+        width: 100%;
+    }
+}
+
+.global-info-select {
+    height: 34px;
+    border-bottom: 1px solid rgb(85, 85, 85);
+    background: transparent;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        .select-title {
+            margin-right: 8px;
+        }
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(32, 32, 32);
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: rgb(58, 58, 58);
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    input:checked+.slider {
+        background-color: rgb(134, 134, 134);
+    }
+    input:focus+.slider {
+        box-shadow: 0 0 1px rgb(32, 32, 32);
+    }
+    input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(100%);
+    }
+}
+
+.global-info {
+    * {
+        background-color: transparent;
+    }
+    height: calc(100% - 2rem - 34px);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background: transparent;
+    .global-info-inner {
+        width: 300%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        transition: .4s !important;
+        .global-info-box {
+            .country-details-li {
+                border: none;
+                border-bottom: 1px solid black;
+                padding: 4px 0;
+                cursor: default;
+                padding-left: 5px;
+            }
+            .country-details-li:hover {
+                background-color: rgb(14, 14, 14);
+            }
+            .country-details-last {
+                border: none !important;
+            }
+            overflow-y: scroll;
+            padding: 5px;
+            .global-info-header {
+                height: 4.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                .header-num {
+                    font-size: 1.5rem;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
+
+.global-info-changer {
+    height: 2rem;
+    border-top: 1px solid rgb(85, 85, 85);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .changer {
+        cursor: pointer;
+        user-select: none;
+    }
+    #changer-info {
+        overflow: hidden !important;
+    }
+    * {
+        background-color: transparent;
+    }
+}
+
+.global-deaths,
+.global-recovered {
+    width: 45%;
+    border: 1px solid #000;
+    height: 100%;
+}
+
+.global-cases {
+    margin-bottom: 0.8rem;
+    background-color: #333;
+    border: 1px solid rgb(85, 85, 85);
+    padding: 5px;
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    flex-direction: column;
+    .global-cases__count {
+        font-size: 1.5rem;
+        color: red;
+    }
+}
+
+.cases-by {
+    background-color: #333;
+    border: 1px solid rgb(85, 85, 85);
+    padding: 5px;
+    height: calc(100% - 3.8rem);
+    overflow-y: scroll;
+    .title-text {
+        word-wrap: break-word;
+        font-size: 0.9rem;
+        display: flex;
+        flex-direction: column;
+        span {
+            text-align: center;
+            margin-top: 5px
+        }
+    }
+}
+
+.country {
+    width: 100%;
+}
+
+h4 {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+    border: 1px solid #000;
+}
+
+#map {
+    background: white;
+}
+
+#mapid {
+    width: 100%;
+    height: 100%;
+}
+
