@@ -1,0 +1,10 @@
+import "./styles/main.scss";
+import "./js/header";
+import "./js/playGame";
+import "./js/stat";
+import "./js/main";
+import "./js/cards";
+import "./js/cardsCategory";
+import "./js/reverseCard";
+import "./js/makeCards";
+import "./js/footer";
