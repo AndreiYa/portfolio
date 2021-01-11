@@ -1,0 +1,279 @@
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+// @import "utils/_reset";
+@import "utils/_normalize";
+@import "utils/_smart-grid";
+
+
+
+::selection {
+  background: transparent;
+}
+
+p {
+  margin: 0;
+  font: 12px/150% Arial;
+  text-align: center;
+  color: #888;
+}
+
+p a {
+  color: #888;
+}
+
+#controls {
+  text-align: center;
+}
+
+#controls button {
+  cursor: pointer;
+  outline: none;
+  padding: 10px 20px;
+  margin: 25px 2px;
+  border: 0;
+  border-radius: 4px;
+  background: #525252;
+  font: bold 14px Arial;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+}
+
+#controls button:hover {
+  background: #7e7e7e;
+}
+
+* {
+  user-select: none;
+}
+
+// body {
+//   background: url("../img/wood.jpg") center center/ contain no-repeat;
+// }
+
+#puzzle {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 0px;
+  border: 40px solid transparent;
+  background: rgb(71, 71, 71);
+  // border-image: url('assets/img/Аl_light.jpg') 25%;
+  border-radius: 4px;
+  box-shadow: 5px 10px 30px 5px rgba(124, 124, 124, 0.89);
+}
+
+label{
+  margin-right: 5px;
+
+}
+
+@media (max-width: 400px) {
+  #puzzle {
+    border: 5px solid transparent;
+  }
+}
+
+
+/* #puzzle.three{
+    width: 243px;
+    height: 243px;
+}
+#puzzle.eight{
+    width: 650px;
+    height: 650px;
+} */
+
+#puzzle span {
+  position: absolute;
+  display: block;
+  border-radius: 4px;
+  outline: 0;
+  user-select: none;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#puzzle span.three {
+  width: 98px;
+  height: 98px;
+}
+
+#puzzle span.four {
+  width: 73px;
+  height: 73px;
+}
+
+#puzzle span.seven {
+  width: 36.5px;
+  height: 36.5px;
+}
+
+#puzzle span.hidden {
+  display: none;
+}
+
+#puzzle span.number {
+
+  font: bold 30px Arial;
+  text-align: center;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
+  color: rgb(249, 252, 221);
+}
+
+#puzzle span.number.seven {
+
+  font: bold 20px Arial;
+  text-align: center;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
+  color: rgb(249, 252, 221);
+}
+
+/* #puzzle span.number:after{
+    content: '';
+    display: block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.055);
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50% , -50%);
+} */
+/* #puzzle span.number.seven:after{
+    width: 15px;
+    height: 15px;
+} */
+#puzzle span.empty {
+  background: transparent;
+}
+
+#puzzle span.number.cell {
+  background: rgb(37, 42, 46);
+  /* background: url('./Al_dark.jpg') no-repeat; */
+}
+
+#puzzle.animate span {
+  -webkit-transition: 0.4s left, 0.4s top;
+  transition: 0.4s left, 0.4s top;
+}
+
+#puzzle.animate-fast span {
+  -webkit-transition: 0.0s left, 0.0s top;
+  transition: 0s left, 0s top;
+}
+
+#puzzle span.hidden {
+  display: none;
+}
+
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.926);
+  z-index: 1;
+  justify-content: center;
+  display: none;
+}
+
+.popup.show {
+  display: flex;
+}
+
+.popscore {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.926);
+  z-index: 2;
+  justify-content: center;
+  display: none;
+}
+.popscore ol{
+  font-size: 18px;
+  color:white;
+}
+.popscore.show {
+  display: flex;
+}
+
+.menu {
+  margin-top: 152px;
+  width: 300px;
+  height: 320px;
+  // background: rgba(54, 54, 54, 0.963);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu_title {
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+
+.menu_item {
+  font-size: 20px;
+  color: white;
+  margin: 20px 0 20px 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.menu_item-new {
+  font-size: 20px;
+  color: white;
+  margin: 25px 0 25px 0;
+  text-align: center;
+  cursor: pointer;
+  animation: blink1 1s linear infinite;
+}
+
+@keyframes blink1 {
+  0% {
+    color: rgb(255, 255, 255);
+  }
+
+  50% {
+    color: rgba(148, 147, 147, 0);
+  }
+
+  100% {
+    color: rgb(255, 255, 255);
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.time,
+.count {
+  outline: none;
+  padding: 10px 20px;
+  margin: 25px 2px;
+  border: 0;
+  border-radius: 4px;
+  background: #525252;
+  font: bold 14px Arial;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+}
