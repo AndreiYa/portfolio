@@ -5,10 +5,12 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.up-level-list,
 li {
   list-style-type: none;
 }
 
+.up-level-list:before,
 li:before {
   content: "\2713";
   color: #39b2b5;
@@ -169,6 +171,17 @@ li:before {
 .main-list {
   margin: 20px;
   margin-left: 0;
+}
+
+ol {
+  margin-left: 45px;
+  margin-top: 5px;
+}
+
+.down-level-list {
+  
+  padding: 5px 0 0 5px;
+  margin-left: 30px;
 }
 
 .list li {
